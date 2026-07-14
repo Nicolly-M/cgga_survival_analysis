@@ -1,8 +1,10 @@
 # The Chinese Glioma Genome Atlas | Survival Analysis
-R code to analyze the survival impact of specific genes from the CGGA database.
+R code to analyze the survival impact of specific genes from the CGGA database. It will be useful for you if:
+- You want to personalize the original plots from CGGA website
+- You want just a specific glioma grade to analyze
+- You want just a specific glioma type (primary/recurrent)
 
 You must download data from: https://www.cgga.org.cn/download.jsp
-
 This code used mRNA-seq 301 as an example with Clinical Data and Expression Data (gene level), and and you will have graphs like these:
 
 <img width="1800" height="1200" alt="EGFR_Primary_WHOIV" src="https://github.com/user-attachments/assets/31ce6d0a-fee9-41ba-a98d-ad9cc0e377f0" />
