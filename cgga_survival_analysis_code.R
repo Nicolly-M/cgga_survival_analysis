@@ -15,6 +15,29 @@ clin$Censor <- as.numeric(clin$Censor)
 expr <- expr.file
 gene.col <- names(expr)[1]
 
+#functions
+get_gene_data <- function(gene){
+  
+  expr %>%
+    filter(.data[[gene.col]] == gene) %>%
+    tidyr::pivot_longer(
+      cols = -all_of(gene.col),
+      names_to = "CGGA_ID",
+      values_to = "Expression"
+    ) %>%
+    inner_join(clin, by = "CGGA_ID")
+  
+}
+
+filter_group <- function(data, prs_type){
+  
+  data %>%
+    filter(
+      PRS_type == prs_type,
+      Grade == "WHO IV"
+    )
+  
+}
 
 
 #### EGFR primary ####
